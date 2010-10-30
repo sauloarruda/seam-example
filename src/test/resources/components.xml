@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<components xmlns="http://jboss.com/products/seam/components" xmlns:core="http://jboss.com/products/seam/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://jboss.com/products/seam/web"
+	xmlns:transaction="http://jboss.com/products/seam/transaction" xmlns:persistence="http://jboss.com/products/seam/persistence">
+
+	<transaction:entity-transaction entity-manager="#{em}" />
+	<persistence:entity-manager-factory name="addressBookDatabase" />
+	<persistence:managed-persistence-context name="em"
+		auto-create="true" entity-manager-factory="#{addressBookDatabase}" />
+
+</components>
