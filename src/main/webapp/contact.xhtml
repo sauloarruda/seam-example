@@ -8,8 +8,15 @@
 <body>
 <h1>Add Contact</h1>
 <h:form id="loginForm">
-	<p><label>Last Name: </label> <h:inputText value="#{contact.lastName}" /></p>
-	<h:commandButton value="Save" action="#{editContactController.save}" />
+	<h:messages globalOnly="true" />
+	<s:validateAll>
+		<p>
+			<label>Last Name: </label> 
+			<h:inputText id="lastName" value="#{contact.lastName}" required="true"/>
+			<h:message for="lastName" escape="true" />
+		</p>
+		<h:commandButton value="Save" action="#{editContactController.save}" />
+	</s:validateAll>
 </h:form>
 </body>
 </html>
